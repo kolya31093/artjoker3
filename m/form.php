@@ -1,6 +1,7 @@
 <h3> Your data: </h3>
 <?
 require "../m/db.php"; //Подключаем БД
+$view = "";
 $name = htmlspecialchars($_POST['name']);
 $email = htmlspecialchars($_POST['email']);
 $region = htmlspecialchars($_POST['region']);
@@ -25,19 +26,17 @@ if ($num_ans) {
 
 
     while ($row = mysql_fetch_array($result)) {
+        $view .= 'name —'.$row['name'].'<br>'.
+                 'email —'.$row['email'].'<br>'.
+                 'territory —'.$row['territory'].'<br><hr>';
 
-        ?>
-        name —  <?php echo $row['name']; ?><br>
-        email — <?php echo $row['email']; ?> <br>
-        territory — <?php echo $row['territory']; ?><br>
-        <hr>
-    <?
     }
 
 
     return;
 } else {
-    echo "<h4>You are successfully registered!!! </h4>";
+    echo "<h4>You are successfully registered!!! </h4>
+           <h4>List of register users:</h4> ";
     $query = "INSERT INTO users (
 `id` ,
 `name` ,
@@ -54,13 +53,11 @@ $result = mysql_query($query) or die(mysql_error());
 
 while ($row = mysql_fetch_array($result)) {
 
+    $view .= 'name —'.$row['name'].'<br>'.
+        'email —'.$row['email'].'<br>'.
+        'territory —'.$row['territory'].'<br><hr>';
 
-    ?>
-    name —  <?php echo $row['name']; ?><br>
-    email — <?php echo $row['email']; ?> <br>
-    territory — <?php echo $row['territory']; ?><br>
-    <hr>
-<?
+
 
 
 }

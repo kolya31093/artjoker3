@@ -16,13 +16,15 @@ require "m/lib.inc.php";
 
 <body>
 
-<form action="m/form_controller.php" method="post">
+<!--<form action="m/form.php" method="post">-->
+<form action="v/list.php" method="post">
+
 
     <p><b>Введите ваши данные:</b></p>
 
-    <p><input id="fio" type="text" name="name">ФІО<Br>
+    <p><input id="fio" type="text" name="name" required>ФІО<Br>
 
-    <p><input type="email" name="email">email<Br><br>
+    <p><input type="email" name="email" required>email<Br><br>
 
         <?php
 

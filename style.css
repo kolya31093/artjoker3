@@ -5,3 +5,15 @@
     #city {
         margin-top: 20px;
     }
+    #list {
+        height: auto;
+        width:80%;
+        padding: 30px;
+
+        margin: 0 auto;
+        border: 10px solid transparent;
+        border-image: 10 repeating-linear-gradient(45deg, #A7CECC, #A7CECC 10px, transparent 10px, transparent 20px, #F8463F 20px, #F8463F 30px,transparent 30px, transparent 40px);
+    }
+    .list{
+        /*background: red;*/
+    }
